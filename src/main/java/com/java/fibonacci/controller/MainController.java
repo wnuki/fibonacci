@@ -43,6 +43,7 @@ public class MainController {
         model.addAttribute("rTime", time.recursiveTime() + " ms");
         model.addAttribute("iTime", time.iterativeTime() + " ms");
         model.addAttribute("fTime", time.fastTime() + " ms");
+        model.addAttribute("tooLong", "Don't try to compute recursively for n > 45. It's not worth");
         return "index";
     }
 }

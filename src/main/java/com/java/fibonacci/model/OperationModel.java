@@ -16,7 +16,6 @@ public class OperationModel {
     public OperationModel(String operation) {
         this.operation = operation;
     }
-
     public OperationModel(long n) {
         this.n = n;
     }
