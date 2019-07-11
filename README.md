@@ -1,7 +1,7 @@
 # Fibonacci app
 
 ## General info
-This application allows to count Fibonacci number with three methods (recurensive, iterative and the fas one) and compare theirs calculation times.
+This application allows to count Fibonacci number with three methods (recurensive, iterative and the fast/matrix one) and compare theirs calculation times.
 
 ## Technologies
 1. Java 8
