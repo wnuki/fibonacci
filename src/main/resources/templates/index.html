@@ -4,26 +4,27 @@
     <meta charset="UTF-8"/>
     <title>Fibonacci</title>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
-<body>
-<h1>Let's calculate Fibonacci number with three methods and compare theirs calculation times.</h1>
+<body style="background-color:LightGrey">
+    <br>
+    <h1 class="text-center">Let's calculate Fibonacci number with three methods and compare theirs calculation times</h1>
 
-<form action="#" th:action="@{/}" th:object="${operationModel}" method="POST">
+    <form action="#" th:action="@{/}" th:object="${operationModel}" method="POST">
+        <input type="number" min="0" th:field="*{n}" class="form-group" style="margin-left:50px"/>
+        <p>
+            <input type="submit" class="btn btn-primary" style="margin-left:50px" name="n" value="calculate Fibonacci"/>
+        </p>
+    </form>
+        <h3 style="margin-left:50px"><p th:text="'Fibonacci number: ' + ${fResult}"/></h3><br>
+        <h4 style="margin-left:50px"><p th:text="'Fast method time: ' + ${fTime}"/></h4>
+        <h4 style="margin-left:50px"><p th:text="'Iterative method time: ' + ${iTime}"/></h4>
+        <h4 style="margin-left:50px"><p th:text="'Recursive method time*: ' + ${rTime}"/></h4>
 
-    <input type="text" th:field="*{n}"/>
-    <p>
-        <input type="submit" class="button" name="n" value="calculate Fibonacci"/>
-    </p>
-    <h1><p th:text="'result: ' + ${fResult}"/></h1>
-    <h3><p th:text="'Recursive time: ' + ${rTime}"/></h3>
-    <h3><p th:text="'Iterative time: ' + ${iTime}"/></h3>
-    <h3><p th:text="'Fast time: ' + ${fTime}"/></h3>
-
-</form>
-
+    <div class="blockquote-footer">
+        <h6 style="margin-left:50px">*Recursive method time is not indicated for n > 45</h6>
+    </div>
 </body>
 </html>
