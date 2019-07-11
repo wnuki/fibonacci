@@ -1,11 +1,18 @@
-package com.java.fibonacci;
+package com.java.fibonacci.service;
 
-import org.springframework.stereotype.Component;
+import com.java.fibonacci.model.OperationModel;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
+@EnableAspectJAutoProxy
 public class RecursiveFibonacci {
 
-    public long computeFib(long n) {
+    public long computeFib(OperationModel model) {
+        return computeFib(model.getN());
+    }
+
+    private long computeFib(long n) {
         if (n < 0) {
             throw new IllegalArgumentException("n have to be >= 0!");
         }

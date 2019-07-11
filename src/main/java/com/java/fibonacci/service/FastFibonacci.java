@@ -1,13 +1,20 @@
-package com.java.fibonacci;
+package com.java.fibonacci.service;
 
-import org.springframework.stereotype.Component;
+import com.java.fibonacci.model.OperationModel;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
 
-@Component
+@Service
+@EnableAspectJAutoProxy
 public class FastFibonacci {
+
+    public BigInteger computeFib(OperationModel model) {
+        return computeFib(model.getN());
+    }
     
-    public BigInteger computeFib(long n) {
+    private  BigInteger computeFib(long n) {
         BigInteger[] matrix = {BigInteger.ONE, BigInteger.ONE, BigInteger.ONE, BigInteger.ZERO};
         return matrixPow(matrix, n)[1];
     }
